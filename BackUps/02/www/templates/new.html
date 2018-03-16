@@ -1,0 +1,66 @@
+﻿<ion-view view-title="Generate New Code" class="changeBG">
+    <ion-content>
+      <div class="card">
+          <img class="" src="img/saLogo.png" alt="logo" />
+      </div>
+        <form class="form-horizontal" role="form" name="form.generateRecitalForm" ng-submit="RecitalGeneration()" novalidate>
+            <div class="card">
+                <ul>
+                    <li>Select the number of pages to serve on every READ press</li>
+                    <li>Select to read "alfatiha" as a first page on every READ press</li>
+                    <li>Enter your email id twice to confirm, we will email your code to you</li>
+                    <li>we do not store your email ID</li>
+                    <li>then, Submit to  generate a new recital code</li>
+                </ul>
+            </div>
+            <div class="card">
+                <div class="list pagesDiv">
+                    <div class="pagesDiv">
+                      <label for="pages" class="control-label">Number of Pages</label>
+                        <label class="radio-inline radioPad">
+                            <input type="radio" id="pages1" name="pages" value="1" checked="checked" ng-model="newCodeData.pages"> 1
+                        </label>
+                        <label class="radio-inline radioPad">
+                            <input type="radio" id="pages2" name="pages" value="2" ng-model="newCodeData.pages"> 2
+                        </label>
+                        <label class="radio-inline radioPad">
+                            <input type="radio" id="pages5" name="pages" value="5" ng-model="newCodeData.pages"> 5
+                        </label>
+                    </div>
+                    <li class="item item-toggle formLabel">
+                        Read alfatiha
+                        <label class="toggle toggle-calm">
+                            <input type="checkbox" ng-model="newCodeData.fatiha">
+                            <div class="track"><div class="handle"></div></div>
+                        </label>
+                    </li>
+                    <label class="item item-input formLabel item-icon-right"
+                    ng-class="{'has-error':generateRecitalForm.emailid.$invalid && !generateRecitalForm.emailid.$pristine}">
+                        <input type="email" class="form-control" id="emailid" name="emailid" placeholder="Enter Email ID" ng-model="newCodeData.emailid" required>
+                        <i class="icon ion-email" style="color:deepskyblue"></i>
+                    </label>
+                    <span ng-show="generateRecitalForm.emailid.$invalid && !generateRecitalForm.emailid.$pristine" class="help=block error">EmailID NOT Valid!</span>
+                    <span ng-show="generateRecitalForm.emailid.$error.required && !generateRecitalForm.emailid.$pristine" class="help=block error">EmailID Missing!</span>
+                    <label class="item item-input formLabel item-icon-right"
+                    ng-class="{'has-error':generateRecitalForm.emailidconfirm.$invalid && !generateRecitalForm.emailidconfirm.$pristine}">
+                        <input type="email" class="form-control" id="emailidconfirm" name="emailidconfirm" placeholder="Confirm Email ID"
+                        ng-model="newCodeData.emailidconfirm" match="newCodeData.emailid" required>
+                        <i class="icon ion-email" style="color:red"></i>
+                    </label>
+                    <span ng-show="generateRecitalForm.emailidconfirm.$invalid && !generateRecitalForm.emailidconfirm.$pristine" class="help=block error">Confirm EmailID Invalid!</span>
+                    <span ng-show="generateRecitalForm.emailidconfirm.$error.required && !generateRecitalForm.emailidconfirm.$pristine" class="help=block error">Confirm EmailID Missing!</span>
+                    <span ng-show="generateRecitalForm.emailidconfirm.$error.match && !generateRecitalForm.emailidconfirm.$pristine" class="help=block error">Confirm EmailID Miss-Match!</span>
+                    <label class="item item-input formLabel item-icon-right">
+                        <input type="text" class="form-control" ng-disabled="true" id="generatedCode" name="generatedCode"
+                          placeholder="Generated Recital Code" ng-model="newCodeData.generatedCode">
+                          <i class="icon ion-lock-combination"></i>
+                    </label>
+                    <button type="submit" class="button button-block icon-right ion-checkmark button-khatm2"
+                            ng-disabled="generateRecitalForm.$invalid" style="font-size:16px; color:gainsboro;">Generate Code</button>
+                    <button class="button button-block icon-right ion-close button-assertive button-outline" 
+                            ng-click="cancelRecitalGeneration()" style="font-size:16px">Cancel</button>
+                </div>
+            </div>
+        </form>
+    </ion-content>
+</ion-view>

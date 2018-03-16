@@ -1,0 +1,12 @@
+
+{
+  "name": "r1p",
+  "short_name": "r1p",
+  "start_url": "index.html",
+  "display": "standalone",
+  "icons": [{
+    "src": "icon.png",
+    "sizes": "512x512",
+    "type": "image/png"
+  }]
+}

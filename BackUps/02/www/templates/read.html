@@ -1,0 +1,16 @@
+﻿<ion-modal-view>
+    <ion-header-bar class="bar-royal">
+        <div class="buttons pull-right">
+            <button class="button icon ion-checkmark-round button-positive" ng-click="completeRead()"></button>
+            <button class="button icon ion-close button-assertive" ng-click="closeRead()"></button>
+        </div>
+    </ion-header-bar>
+    <ion-content scroll="true" overflow-scroll="true">
+        <ion-slide-box show-pager="true" pager-click="changeSlide(index)">
+                <ion-slide ng-repeat="image in images">
+                    <br />
+                    <img class="img-responsive" ng-src="{{image}}" style="max-width:100%">
+                </ion-slide>
+        </ion-slide-box>
+    </ion-content>
+</ion-modal-view>

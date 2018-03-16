@@ -1,0 +1,40 @@
+﻿<ion-view view-title="Home" class="changeBG" ng-controller="IndexController">
+    <ion-content ng-init="initStart()">
+        <div class="card">
+                <img class="" src="img/saLogo.png" alt="logo"/>
+        </div>
+        <div class="card">
+                    <div class="item item-divider">
+                        <h2><strong>{{whichKhatma}} Completion Rate</strong></h2>
+                    </div>
+                    <div class="item item-text-wrap">
+                        <canvas id="doughnut" class="chart chart-doughnut" chart-data="data" chart-labels="labels"
+                                chart-colors="kolors"></canvas>
+                    </div>
+            <button class="button button-khatma button-block" ng-show="showKHATMA" ng-click="read('KHATMA')">
+                <span class="btnText"><strong>Read KHATMA</strong></span>
+                <span class="icon-right ion-leaf custom-icon"></span>
+            </button>
+            <button class="button button-khatm2 button-block" ng-show="showKHATM2" ng-click="read('KHATM2')">
+                <span class="btnText"><strong>Read KHATM2</strong></span>
+                <span class="icon-right ion-leaf custom-icon"></span>
+                <span class="icon-right ion-leaf custom-icon"></span>
+            </button>
+            <button class="button button-khatm5 button-block" ng-show="showKHATM5" ng-click="read('KHATM5')">
+                <span class="btnText"><strong>Read KHATM5</strong></span>
+                <span class="icon-right ion-leaf custom-icon"></span>
+                <span class="icon-right ion-leaf custom-icon"></span>
+                <span class="icon-right ion-leaf custom-icon"></span>
+                <span class="icon-right ion-leaf custom-icon"></span>
+                <span class="icon-right ion-leaf custom-icon"></span>
+            </button>
+        </div>
+            <button class="button button-stable button-block" ng-click="changeCard()">
+                <span class="icon-right ion-chevron-right arrows-icon"></span>
+                <span class="icon-right ion-chevron-right arrows-icon"></span>
+                <span class="icon-right ion-chevron-right arrows-icon"></span>
+                <span class="icon-right ion-chevron-right arrows-icon"></span>
+                <span class="icon-right ion-chevron-right arrows-icon"></span>
+            </button>
+    </ion-content>
+</ion-view>

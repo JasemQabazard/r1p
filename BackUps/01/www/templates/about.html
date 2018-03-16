@@ -1,0 +1,39 @@
+<ion-view view-title="About" class="changeBG">
+  <ion-content>
+      <div class="card">
+          <img class="" src="img/saLogo.png" alt="logo" />
+      </div>
+      <div class="card">
+          <p><strong>Total Generated Codes: {{aboutInfo.codesGenerated}}</strong></p>
+          <p><strong>Total Completed Recitals: {{aboutInfo.recitalsTotal}}</strong></p>
+          <p><strong>Total Page Reads: {{aboutInfo.pagesTotal}}</strong></p>
+          <p><strong>Total Fatiha Reads: {{aboutInfo.fatihas}}</strong></p>
+          <div class="row">
+              <div class="col text-right">
+                  <button type="submit" side="right" class="button btnText icon-right ion-checkmark
+                          button-khatm2 button-small" ng-click="hideAbout()" style="width:150px; color:gainsboro;">OK
+                  </button>
+              </div>
+          </div>
+      </div>
+      <div class="card">
+          <h3 style="color:grey">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Brief:</h3>
+          <p class="pFormats">
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I launched the first site for this application on 2010, as Read1Page.com.
+              This release expands the application to further generate recital codes so
+              that you can share a recital with your friends or your family when you
+              wish to do so.
+              The idea is meant to be simple while secure, hence a compromise was made
+              to make the recital code short and not have user register or sign on. We use your email id
+              to send you the recital code you generate via an email letter once, we do
+              not store your email id or use it for any other purpose. The general
+              reecital codes are the default for everyone to share a global recital of the
+              Holly Quran.
+              Please include your brother moslims in your prayers.
+          </p>
+          <p>&nbsp;&nbsp;&nbsp;Regards, </p>
+          <p>&nbsp;&nbsp;&nbsp;JasemQabazard@yahoo.com, <a href="http://www.successarchitecture.com">Success Architecture</a></p>
+          <br />
+      </div>
+  </ion-content>
+</ion-view>

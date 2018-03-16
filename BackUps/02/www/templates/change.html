@@ -1,0 +1,45 @@
+<ion-view view-title="Change Recital Code" class="changeBG" ng-controller="EntryController">
+  <ion-content>
+    <div class="card">
+        <img class="" src="img/saLogo.png" alt="logo" />
+    </div>
+      <form class="form-horizontal" role="form" name="form.enterRecitalForm" ng-submit="recitalEntry()" novalidate>
+          <div class="card">
+              <h4>Change to one of the following Recital Codes to join everyone in the common recital:</h4>
+              <ul>
+                  <li>"KHATMA" to read the fatiha and <strong>ONE</strong> more page</li>
+                  <li>"KHATM2" to read the fatiha and <strong>TWO</strong> more pages</li>
+                  <li>"KHATM5" to read the fatiha and <strong>FIVE</strong> more pages</li>
+              </ul>
+              <h4>OR Enter your own recital code to join your friends in their readings</h4>
+              <h4>Current Recital Code is: <strong style="color:darkred">{{crc}}</strong></h4>
+          </div>
+          <div class="card">
+              <div class="list">
+                  <label class="item item-input formLabel item-icon-right"
+                         ng-class="{'has-error': enterRecitalForm.recitalCode.$error.required && !enterRecitalForm.recitalCode.$pristine}">
+                      <input type="text" class="form-control" id="recitalCode" name="recitalCode" ng-minlength="6" ng-maxlength="6"
+                             placeholder="Enter Recital Code*" ng-pattern="/^[a-zA-Z0-9]*$/" ng-model="recitals.recitalCode" required>
+                      <i class="icon ion-edit" style="font-size:16px"></i>
+                  </label>
+                  <span ng-show="enterRecitalForm.recitalCode.$error.required && !enterRecitalForm.recitalCode.$pristine" class="help=block error">Enter Code</span>
+                  <span ng-show="enterRecitalForm.recitalCode.$error.minlength && !enterRecitalForm.recitalCode.$error.maxlength" class="help=block error">Only 6 chars long</span>
+                  <span ng-show="enterRecitalForm.recitalCode.$error.pattern && !enterRecitalForm.recitalCode.$pristine" class="help=block error">Must be alphanumeric</span>
+                  <label class="item item-input formLabel item-icon-right"
+                         ng-class="{'has-error': enterRecitalForm.recitalCode.$error.required && !enterRecitalForm.recitalCode.$pristine
+                                                            || enterRecitalForm.recitalCodeConfirm.$error.match}">
+                      <input type="text" class="form-control" id="recitalCodeConfirm" name="recitalCodeConfirm"
+                             placeholder="Confirm Recital Code*" ng-model="recitals.recitalCodeConfirm" match="recitals.recitalCode" required>
+                      <i class="icon ion-edit" style="font-size:16px"></i>
+                  </label>
+                  <span ng-show="enterRecitalForm.recitalCodeConfirm.$error.required && !enterRecitalForm.recitalCodeConfirm.$pristine" class="help=block error">Confirm Recital Code</span>
+                  <span ng-show="enterRecitalForm.recitalCodeConfirm.$error.match && !enterRecitalForm.recitalCodeConfirm.$error.$pristine" class="help=block error">Confirmation mismatch</span>
+                  <button type="submit" class="button button-block icon-right ion-checkmark button-khatm2"
+                          ng-disabled="enterRecitalForm.$invalid" style="font-size:16px; color:gainsboro;">Change Code</button>
+                  <button type="button" class="button button-block icon-right ion-close button-assertive button-outline" 
+                          ng-click="cancelRecitalEntry()" style="font-size:16px">Cancel</button>
+              </div>
+          </div>
+      </form>
+</ion-content>
+</ion-view>

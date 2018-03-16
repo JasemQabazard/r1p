@@ -1,0 +1,91 @@
+.card {
+        background-color:aliceblue ;
+        margin-top:10px;
+    }
+.imgCard{
+    max-width: 100%;
+    height: auto;
+}
+.verseImg{
+    max-width:100%;
+    max-height:100%;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    overflow: auto;
+    position: fixed;
+    right: 0;
+    top: 0;
+}
+.custom-icon {
+        font-size: 24px;
+        color:#b0d7b5;
+}
+.arrows-icon {
+        font-size: 24px;
+        color:brown;
+}
+.changeBG {
+    background-color:azure;
+}
+.pFormats{
+    margin:3px;
+    padding:15px;
+}
+.formLabel{
+    margin-top:5px;
+    font-weight: lighter;
+}
+.error{
+    color:red;
+}
+.radioPad{
+    padding: 15px;
+}
+.control-label{
+    font-weight:lighter;
+    margin:20px 20px 20px 10px;
+}
+.pagesDiv{
+    margin:5px;
+    background-color:white;
+}
+.has-footer {
+  bottom: 93px;
+}
+.alignReadingRadio{
+    padding:10px;
+}
+.sub-footer{
+bottom:50px !important;
+}
+.readingRadio{
+    margin-left:10px;
+}
+.slider-pager {
+	top: 0;
+	bottom: initial;
+    -webkit-transform: translateZ(0);
+	transform: translateZ(0);
+}
+.slider-pager-page {
+  color:darkgray !important;
+  -webkit-transform: translateZ(0);
+	transform: translateZ(0);
+}
+
+.slider-pager-page.active {
+  color:darkgoldenrod !important;
+}
+.button-khatma{
+    background-color:#c6a119;
+}
+.button-khatm2{
+    background-color:#007537;
+}
+.button-khatm5{
+    background-color:#a01f80;
+}
+.btnText{
+    color:gainsboro;
+}
